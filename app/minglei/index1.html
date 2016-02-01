@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!--For Chinese Character-->
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+
+<img>
+
+<img src="w3cschool.png" width="104" height="142">
+<p>This is a pa</p>
+<br />
+<br />
+<br />
+
+
+<!-- 属性一般描述于开始标签, 属性总是以名称/值对的形式出现，比如：name="value", href is a attribute -->
+<a href='http://www.runoob.com'>这是一个链接</a>
+
+<h1>这是一个标题。</h1>
+<hr> <!--hr 元素可用于分隔内容-->
+<h2>这是一个标题。</h2>
+<hr>
+<h3>这是一个标题。</h3>
+
+<p>This is<br>a para<br>graph with line breaks</p>
+
+
+<p>
+    This is an email link:
+    <a href="zml13856086071@163.com" target="_top">
+        Send Mail</a>
+</p>
+
+<script>
+        var firstName = "John";
+        var lastName = "Smith";
+        document.writeln(firstName + " " + lastName);
+        document.write("<br>");
+        var arr = [1, 2, 3, 4, 5]
+        for (var i = 0; i < arr.length; i++) {
+            document.writeln(arr[i])
+        }
+        // another line in js
+        document.write("<br>");
+        /**
+         * Just like in Math Call
+         * @param x
+         * @returns {number}
+         */
+        var doubleOfNum = function (x) {
+            return 2 * x
+        }
+        document.write(doubleOfNum(3))
+        var add_2 = function (x) {
+            return x + 2;
+        }
+        var map = function (func, list) {
+            var output = []
+            for (idx in list) {
+                output.push(func(list[idx]))
+            }
+            return output
+        }
+        var newList = map(add_2, [1, 2, 3])
+        for (var i = 0; i < newList.length; i++) {
+            document.writeln(newList[i])
+        }
+
+        var add1 = function (x) {
+            return x + 1
+        }
+
+        var negate = function (func) {
+            return function (x) {
+                return -1 * func(x);
+            }
+        }
+        negate(add1)(5);
+
+</script>
+
+<div ng-app="">
+    <p>名字 : <input type="text" ng-model="name"></p>
+    <h1>Hello {{name}}</h1>
+</div>
+</body>
+</html>

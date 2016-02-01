@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object Example</title>
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script>
+        /**
+         * The primitive types of JavaScript are true, false, numbers, strings, null and undefined. Every other value is an object.
+         In JavaScript objects contain ```propertyName: propertyValue pairs.
+         */
+        var object = {}  // Note: this is the recommended way
+        var object_1 = new Object()
+
+        // Just like key-value type.
+        var language = {
+            name: 'Javascript',
+            isSupportedByBrowsers: true,
+
+            // Yes, objects can be nested!
+            author: {
+                firstName: 'Brasten',
+                lastName: 'Eich'
+            },
+
+            // Yes, functions can be values too!
+            getAuthorFullName: function () {
+                return this.author.firstName + " " + this.author.lastName
+            }
+        }
+        language.newProperty = 'new value';
+        language.newValue = "Good"
+        document.write(language.name + "<br>" + language.getAuthorFullName())
+
+        var myObject = {key: "first value"};
+        myObject.key = "another value";
+        document.write(myObject.key)
+        document.write("<br>")
+
+        var adult = {age: 26}
+        retrievedProperty = adult.age
+        //        var stringRepresentation = adult.toString();document.write(stringRepresentation);document.write("<br>")
+        adult.toString = function () {
+            return "I'm " + this.age
+        }
+        document.write(adult.toString())
+        document.write("<br>")
+        adult.age = 9
+        document.write(adult.age)
+
+        var child = Object.create(adult)
+
+    </script>
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="">
+    <p>名字 : <input type="text" ng-model="name"></p>
+    <h1>Hello {{name}}</h1>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
