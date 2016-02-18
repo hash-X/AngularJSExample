@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+        JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）
+        JSON - 转换为 JavaScript 对象
+        JSON 文本格式在语法上与创建 JavaScript 对象(Object)的代码相同。
+        用 JSON 数据来生成原生的 JavaScript 对象。
+
+        JSON - 转换为 JavaScript 对象
+        JSON 文本格式在语法上与创建 JavaScript 对象的代码相同。
+        由于这种相似性，无需解析器，JavaScript 程序能够使用内建的 eval() 函数，用 JSON 数据来生成原生的 JavaScript 对象。
+
+        为什么使用 JSON？
+        对于 AJAX 应用程序来说，JSON 比 XML 更快更易使用：
+        使用 XML
+            读取 XML 文档
+            使用 XML DOM 来循环遍历文档
+            读取值并存储在量中
+
+        使用 JSON
+            读取 JSON 字符串
+            用 eval() 处理 JSON 字符串
+    -->
+    <h2>在 JavaScript 中创建 JSON 对象</h2>
+
+    <p>
+        Name: <span id="jname"></span><br />
+        Age: <span id="jage"></span><br />
+        Address: <span id="jstreet"></span><br />
+        Phone: <span id="jphone"></span><br />
+    </p>
+
+    <script type="text/javascript">
+        var JSONObject= {
+            "name":"Bill Gates",
+            "street":"Fifth Avenue New York 666",
+            "age":56,
+            "phone":"555 1234567"};
+        document.getElementById("jname").innerHTML=JSONObject.name
+        document.getElementById("jage").innerHTML=JSONObject.age
+        document.getElementById("jstreet").innerHTML=JSONObject.street
+        document.getElementById("jphone").innerHTML=JSONObject.phone
+    </script>
+
+</body>
+</html>

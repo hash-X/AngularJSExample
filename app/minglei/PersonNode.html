@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myNoteApp">
+<head>
+    <meta charset="utf-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-controller="myNoteCtrl" style="background-color: beige">
+
+    <h2 style="background-color: burlywood">My NodeBook</h2>
+
+    <textarea ng-model="message" style="background-color: azure" cols="120" rows="30"></textarea>
+    <p>
+        <button ng-click="save()" style="background-color: brown">Save</button>
+        <button ng-click="clear()" style="background-color: brown">Clear</button>
+    </p>
+
+    <p><b><h3>Remain Character: <span ng-bind="left()"></span></h3></b></p>
+    <button ng-click="count = count + 1" ng-init="count = 0" style="background-color: #1ABC9C">Click Me <span>{{count}}</span></button>
+
+<script>
+    var app = angular.module("myNoteApp", []);
+    app.controller("myNoteCtrl", function ($scope) {
+        $scope.message = "";
+        $scope.left = function () {
+            return (124 - $scope.message.length) >= 0 ? (124 - $scope.message.length) : 'You have already OOM';
+        };
+        $scope.clear = function () {
+            $scope.message = "";
+        };
+        $scope.save = function () {
+            alert("Note Saved");
+        };
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
