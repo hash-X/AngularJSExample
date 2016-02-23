@@ -1,0 +1,27 @@
+<h1>机器学习作业</h1>
+<div ng-controller="MLJobsController">
+    <p><a class="btn btn-primary" ng-click="vm.develop()">新增作业</a></p>
+    <table st-table="rowCollection" class="table table-striped">
+        <thead>
+        <tr>
+            <th lr-drag-src="headers" lr-drop-target="headers" ng-repeat="name in columnNames"
+                st-sort="{{name}}">{{name}}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in jobs">
+            <td ng-repeat="col in columns">{{row[col]}}</td>
+            <td>
+                <a class="btn btn-primary" ng-click="vm.develop(row.id)">开发</a>&nbsp;|&nbsp;
+                <a class="btn btn-primary" ng-click="vm.run(row.id)">运行</a>&nbsp;|&nbsp;
+                <a class="btn btn-primary" ng-click="vm.stop(row.id)">停止</a>&nbsp;|&nbsp;
+                <a class="btn btn-primary" ng-click="vm.dispatch(row.id)">调度配置</a>&nbsp;|&nbsp;
+                <a class="btn btn-primary" ng-click="vm.history(row.id)">历史</a>&nbsp;|&nbsp;
+                <a class="btn btn-primary" ng-click="vm.delete($index,row.id)">删除</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-show="isLoading" class="loading-indicator"></div>
